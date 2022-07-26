@@ -22,7 +22,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
 }
 body .bg {
   position: absolute;
@@ -156,11 +156,12 @@ body .bg.bg-light {
 #nav-bar {
   width: 100%;
   height: 100px;
-  margin-top: auto;
+  margin-top: 88vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-inline: 48px;
+  position: fixed;
 }
 #nav-bar i {
   color: var(--second-color);
