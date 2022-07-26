@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/icons8-weather.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+  </head>
+  <body>
+    <img src="assets/mapa-dark.svg" alt="" class="bg">
+    <!-- barra de cima -->
+
+      <div class="top-bar">
+        <div id="info-location">
+          <span id="date-country"></span>
+          <div id="location">
+            <i class="fa-solid fa-location-dot"></i>
+            <span id="city">CIDADE, <span id="country">País</span></span>
+          </div>
+        </div>
+        <div class="theme-switcher">
+          <i class="fa-solid fa-sun"></i>
+          <i class="fa-solid fa-moon"></i>
+        </div>
+      </div>
+  
+      <!-- temperatura -->
+  
+      <div id="temperature-box">
+        <img src="./assets/3d weather icons/6.png" alt="" id="temp-ilusta">
+        <span id="description">Descrição</span>
+        <span id="temperature">-ºC</span>
+        <input type="text" id="search-city">
+      </div>
+      
+
+    <!-- cards de previsão -->
+
+    <div class="previsions">
+      <div class="card-prevision">
+        <img src="./assets/3d weather icons/28.png" alt="" class="ilustration ilustra-1">  
+        <span class="time time-card-1">00:00 am</span>
+        <span class="temperature-card t-card-1">10ºC</span>
+      </div>
+
+      <div class="card-prevision">
+        <img src="./assets/3d weather icons/10n.png" alt="" class="ilustration ilustra-2">
+        <span class="time time-card-2">00:00 am</span>
+        <span class="temperature-card t-card-2">10ºC</span>
+      </div>
+
+      <div class="card-prevision">
+        <img src="./assets/3d weather icons/01n.png" alt="" class="ilustration ilustra-2">
+        <span class="time time-card-2">00:00 am</span>
+        <span class="temperature-card t-card-3">10ºC</span>
+      </div>
+    </div>
+
+    <nav id="nav-bar">
+      <i class="fa-solid fa-house home active-nav"></i>
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <i class="fa-regular fa-compass"></i>
+      <i class="fa-regular fa-user"></i>
+    </nav>
+
+    <script src="index.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/2da8be6807.js" crossorigin="anonymous"></script>
+  </body>
+</html>
