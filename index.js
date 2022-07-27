@@ -7,10 +7,11 @@ const dateOfCity = document.querySelector('#date-country');
 const temperature = document.querySelector('#temperature');
 const descriptionOfTemperature = document.querySelector('#description');
 const ilustrationOfTemperature = document.querySelector('#temp-ilusta');
-const searchCity = document.querySelector('#search-city');
-const searchBar = document.querySelector('.fa-magnifying-glass')
+const searchInput = document.querySelector('#search-city');
+const searchBox = document.querySelector('.search-box');
+const searchBarIcon = document.querySelector('.fa-magnifying-glass');
 
-searchBar.addEventListener('click', () => searchCity.classList.toggle('search-bar-show'))
+searchBarIcon.addEventListener('click', () => searchBox.classList.toggle('search-box-show'));
 
 themeSwitcher.addEventListener('click', toggleThemePage);
 function toggleThemePage() {
@@ -28,9 +29,9 @@ const api = {
   units: "metric"
 };
 
-searchCity.addEventListener('keypress', (event) => {
+searchInput.addEventListener('keypress', (event) => {
   key = event.keyCode;
-  if (key == 13) searchResults(searchCity.value);
+  if (key == 13) searchResults(searchInput.value);
 });
 
 window.addEventListener('load', () => {

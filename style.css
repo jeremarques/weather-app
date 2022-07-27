@@ -147,11 +147,56 @@ body .bg.bg-light {
   font-size: 18px;
 }
 
-#search-city {
-  display: none;
+.search-box {
+  position: fixed;
+  width: 100vw;
+  height: 85vh;
+  background: rgba(255, 255, 255, 0.048);
+  backdrop-filter: blur( 13px );
+  -webkit-backdrop-filter: blur( 13px );
+  border-radius: 30px 30px 0 0  ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(120%);
+  transition: all .5s ease;
 }
-#search-city.search-bar-show {
-  display: block;
+.search-box-show {
+  display: flex;
+  margin-top: 33%;
+  transform: translateY(0% );
+}
+.search-box i {
+  color: var(--primary-color);
+  font-size: 25px;
+  margin-top: 20px;
+}
+#input-search {
+  background-color: var(--second-color);
+  width: 80vw;
+  height: 40px;
+  border-radius: 20px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#input-search i {
+  font-size: 16px;
+  padding-right: 15px;
+  margin: 0;
+  line-height: 0;
+}
+#search-city {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  background: none;
+  border: none;
+  padding-inline: 15px;
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
 }
 #nav-bar {
   width: 100%;
@@ -162,6 +207,7 @@ body .bg.bg-light {
   justify-content: space-between;
   padding-inline: 48px;
   position: fixed;
+  z-index: 5;
 }
 #nav-bar i {
   color: var(--second-color);
