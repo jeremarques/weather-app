@@ -5,6 +5,7 @@
 }
 :root {
   --bg-color: rgb(1, 0, 13);
+  --bg-input: rgb(31, 31, 31);
   --second-color: rgb(187, 187, 187);
   --primary-color: rgb(255, 255, 255);
 }
@@ -12,7 +13,7 @@
   --bg-color: rgb(250, 250, 250);
   --primary-color: rgb(12, 12, 12);
   --second-color: rgb(119, 119, 119);
-
+  --bg-input: rgb(235, 235, 235);
 }
 body {
   font-family: 'Nunito', sans-serif;
@@ -150,32 +151,56 @@ body .bg.bg-light {
 .search-box {
   position: fixed;
   width: 100vw;
-  height: 85vh;
-  background: rgba(255, 255, 255, 0.048);
-  backdrop-filter: blur( 13px );
-  -webkit-backdrop-filter: blur( 13px );
-  border-radius: 30px 30px 0 0  ;
+  height: 100%;
+  background: var(--bg-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   transform: translateY(120%);
-  transition: all .5s ease;
+  transition: transform .5s ease;
+}
+.search-box .bg-search-box {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  margin-top: 80%;
+}
+.search-box .bg-search-box.bg-search-box {
+  opacity: 10%;
 }
 .search-box-show {
   display: flex;
-  margin-top: 33%;
-  transform: translateY(0% );
+  transform: translateY(0%);
 }
 .search-box i {
   color: var(--primary-color);
   font-size: 25px;
   margin-top: 20px;
+  font-size: 20px;
+  line-height: 100%;
+  padding: 4px;
+}
+.search-box .top-search {
+  width: 100%;
+  text-align: center;
+  padding: 28px 38px 28px 38px;
+}
+.search-box .top-search i {
+  float: left;
+  clear: both;
+  margin: 0;
+  cursor: pointer;
+}
+.search-box .top-search span {
+  color: var(--primary-color);
+  font-size: 21px;
+  font-weight: 600;
 }
 #input-search {
-  background-color: var(--second-color);
+  background-color: var(--bg-input);
   width: 80vw;
-  height: 40px;
-  border-radius: 20px;
+  height: 60px;
+  border-radius: 60px;
   margin-top: 20px;
   display: flex;
   align-items: center;
@@ -184,8 +209,16 @@ body .bg.bg-light {
 #input-search i {
   font-size: 16px;
   padding-right: 15px;
+  padding-left: 20px;
   margin: 0;
   line-height: 0;
+  color: var(--second-color);
+  cursor: pointer;
+}
+#input-search i:nth-child(3) {
+  padding-right: 25px;
+  font-size: 12px;
+  -webkit-tap-highlight-color: transparent;
 }
 #search-city {
   height: 100%;
@@ -193,11 +226,16 @@ body .bg.bg-light {
   border-radius: 20px;
   background: none;
   border: none;
-  padding-inline: 15px;
+  padding: 0 0 0 2px;
   font-size: 16px;
   font-family: 'Nunito', sans-serif;
-  font-weight: 600;
+  color: var(--primary-color);
 }
+#search-city:focus {
+  outline: 0;
+}
+
+
 #nav-bar {
   width: 100%;
   height: 100px;
@@ -216,6 +254,7 @@ body .bg.bg-light {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 #nav-bar i.active-nav {
   color: var(--primary-color);

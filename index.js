@@ -1,6 +1,6 @@
 const themeSwitcher = document.querySelector('.theme-switcher');
 const backgroundSvg = document.querySelector('.bg');
-
+const backgroundSvgSearch = document.querySelector('.bg-search-box');
 const city = document.querySelector('#city');
 const country = document.querySelector('#country');
 const dateOfCity = document.querySelector('#date-country');
@@ -10,17 +10,28 @@ const ilustrationOfTemperature = document.querySelector('#temp-ilusta');
 const searchInput = document.querySelector('#search-city');
 const searchBox = document.querySelector('.search-box');
 const searchBarIcon = document.querySelector('.fa-magnifying-glass');
+const btnBack = document.querySelector('.back');
+const searchInInput = document.querySelector('.search-for-input');
+const clearInput = document.querySelector('.clear-input');
 
 searchBarIcon.addEventListener('click', () => searchBox.classList.toggle('search-box-show'));
+btnBack.addEventListener('click', () => searchBox.classList.remove('search-box-show'));
+clearInput.addEventListener('click', () => searchInput.value = "");
+searchInInput.addEventListener('click', () => {
+  searchResults(searchInput.value);
+  searchBox.classList.remove('search-box-show');
+  searchInput.value = "";
+});
 
 themeSwitcher.addEventListener('click', toggleThemePage);
 function toggleThemePage() {
   document.body.classList.toggle('light-theme');
   themeSwitcher.classList.toggle('light');
   backgroundSvg.classList.toggle('bg-light');
+  backgroundSvgSearch.classList.toggle('bg-search-box-light ');
 };
 
-//========================//
+//========== API CONNECTION ==============//
 
 const api = {
   key: "f3fb7888586e257660ae9d68ed9afafc",
@@ -31,7 +42,11 @@ const api = {
 
 searchInput.addEventListener('keypress', (event) => {
   key = event.keyCode;
-  if (key == 13) searchResults(searchInput.value);
+  if (key == 13) {
+    searchResults(searchInput.value);
+    searchBox.classList.remove('search-box-show');
+    searchInput.value = "";
+  };
 });
 
 window.addEventListener('load', () => {
@@ -81,10 +96,12 @@ function searchResults(city) {
 function showResults(weather) {
   console.log(weather)
   city.innerHTML = `${weather.name}, <span id="country">${weather.sys.country}</span>`;
-  descriptionOfTemperature.innerHTML = `${weather.weather[0].description}`;
+  let description = weather.weather[0].description;
+  descriptionOfTemperature.innerHTML = `${description[0].toUpperCase() + description.substr(1)}`;
   temperature.innerHTML = `${Math.round(weather.main.temp)}ºC`;
-  ilustrationOfTemperature.src = `/assets/3d weather icons/${weather.weather[0].icon}.png`
+  ilustrationOfTemperature.src = `/assets/3d weather icons/${weather.weather[0].icon}.png`;
 };
+
 function setDate() {
   const date = new Date();
   const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
