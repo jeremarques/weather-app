@@ -28,7 +28,7 @@ function toggleThemePage() {
   document.body.classList.toggle('light-theme');
   themeSwitcher.classList.toggle('light');
   backgroundSvg.classList.toggle('bg-light');
-  backgroundSvgSearch.classList.toggle('bg-search-box-light ');
+  backgroundSvgSearch.classList.toggle('bg-search-box-light');
 };
 
 //========== API CONNECTION ==============//
