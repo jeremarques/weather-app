@@ -1,12 +1,19 @@
 const themeSwitcher = document.querySelector('.theme-switcher');
 const backgroundSvg = document.querySelector('.bg');
 const backgroundSvgSearch = document.querySelector('.bg-search-box');
+const dateOfCity = document.querySelector('#date-country');
+
 const city = document.querySelector('#city');
 const country = document.querySelector('#country');
-const dateOfCity = document.querySelector('#date-country');
 const temperature = document.querySelector('#temperature');
 const descriptionOfTemperature = document.querySelector('#description');
 const ilustrationOfTemperature = document.querySelector('#temp-ilusta');
+const ilustrationDetailsWeather = document.querySelector('#ilustration-weather');
+const sensation = document.querySelector('#sensation-percent');
+const wind = document.querySelector('#wind-velocity');
+const humidity = document.querySelector('#humidity-percent');
+const presure = document.querySelector('#presure-percent');
+
 const searchInput = document.querySelector('#search-city');
 const searchBox = document.querySelector('.search-box');
 const searchBarIcon = document.querySelector('.fa-magnifying-glass');
@@ -100,6 +107,13 @@ function showResults(weather) {
   descriptionOfTemperature.innerHTML = `${description[0].toUpperCase() + description.substr(1)}`;
   temperature.innerHTML = `${Math.round(weather.main.temp)}ºC`;
   ilustrationOfTemperature.src = `/assets/3d weather icons/${weather.weather[0].icon}.png`;
+
+  sensation.innerHTML = `${Math.round(weather.main.feels_like)}ºC`;
+  humidity.innerHTML = `${weather.main.humidity}%`;
+  wind.innerHTML = `${Math.round(weather.wind.speed)} km/h`;
+  presure.innerHTML = `${weather.main.pressure}`;
+  ilustrationDetailsWeather.src = `/assets/3d weather icons/${weather.weather[0].icon}.png`
+
 };
 
 function setDate() {
