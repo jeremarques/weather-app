@@ -106,13 +106,13 @@ function showResults(weather) {
   let description = weather.weather[0].description;
   descriptionOfTemperature.innerHTML = `${description[0].toUpperCase() + description.substr(1)}`;
   temperature.innerHTML = `${Math.round(weather.main.temp)}ºC`;
-  ilustrationOfTemperature.src = `/assets/3d weather icons/${weather.weather[0].icon}.png`;
+  ilustrationOfTemperature.src = `/assets/3d weather icons webp/${weather.weather[0].icon}.webp`;
 
   sensation.innerHTML = `${Math.round(weather.main.feels_like)}ºC`;
   humidity.innerHTML = `${weather.main.humidity}%`;
   wind.innerHTML = `${Math.round(weather.wind.speed)} km/h`;
   presure.innerHTML = `${weather.main.pressure}`;
-  ilustrationDetailsWeather.src = `/assets/3d weather icons/${weather.weather[0].icon}.png`
+  ilustrationDetailsWeather.src = `/assets/3d weather icons webp/${weather.weather[0].icon}.webp`
 
 };
 
