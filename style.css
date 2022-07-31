@@ -134,6 +134,7 @@ body .bg.bg-light {
   gap: 15px;
   padding: 12px 14px;
   color: var(--primary-color);
+  cursor: pointer;
 }
 .previsions .card-prevision .ilustration {
   width: 45px;
@@ -347,7 +348,9 @@ body .bg.bg-light {
   align-items: center;
   gap: 12px;
 }
-
+.js-tilt-glare {
+  border-radius: 16px;
+}
 /* NAVBAR */
 
 #nav-bar {
@@ -370,22 +373,18 @@ body .bg.bg-light {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all .2s ease;
   cursor: pointer;
 }
-#nav-bar i.active-nav {
+#nav-bar i:hover {
   color: var(--primary-color);
+  transform: translateY(-3px);
 }
-#nav-bar i.active-nav::after {
-  content: "";
-  background-color: rgba(255, 255, 255, 0.205);
-  filter: blur(25px);
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  z-index: -1;
+@media (max-height: 800px) {
+  .previsions {
+    margin-top: 10px;
+  }
 }
-
 @media (min-height: 1000px) {
   #temperature-box {
     margin-top: 100px;
@@ -396,6 +395,69 @@ body .bg.bg-light {
 }
 @media (min-width: 600px) {
   .previsions {
-    justify-content: space-around;
+    justify-content: center;
+    gap: 144px;
+  }
+}
+@media (min-width: 1280px) {
+  body .bg {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 100px;
+  }
+  #nav-bar {
+    justify-content: center;
+    gap: 120px;
+  }
+  #temperature-box {
+    margin-top: initial;
+  }
+  #temperature-box img {
+    width: 170px;
+  }
+  #temperature-box #description {
+    font-size: 22px;
+    font-weight: 500;
+  }
+  #temperature-box #temperature {
+    font-size: 92px;
+  }
+  .previsions {
+    justify-content: center;
+    width: initial;
+    gap: 56px;
+    margin-top: initial;
+    padding: 0;
+  }
+  .previsions .card-prevision {
+    background: rgba(238, 238, 238, 0.034);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    justify-content: center;
+    border-radius: 16px;
+    height: 200px;
+    width: 150px;
+  }
+  .previsions .card-prevision .ilustration {
+    height: 55px;
+    width: auto;
+  }
+  .previsions .card-prevision .time {
+    font-size: 18px;
+  }
+  .previsions .card-prevision .temperature-card {
+    font-size: 22px;
+  }
+  .responsive {
+    display: flex;
+    justify-content: center;
+    margin-top: 12vh;
+    gap: 150px;
+  }
+  .search-box .bg-search-box {
+    width: 80%;
+    margin-top: 220px;
   }
 }

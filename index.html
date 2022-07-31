@@ -33,33 +33,34 @@
       </div>
   
       <!-- temperatura -->
-  
-      <div id="temperature-box">
-        <img src="./assets/3d weather icons webp/04d.webp" alt="" id="temp-ilusta">
-        <span id="description">Descrição</span>
-        <span id="temperature">-ºC</span>
-      </div>
-      
+      <div class="responsive">
+        <div id="temperature-box">
+          <img src="./assets/3d weather icons webp/04d.webp" alt="" id="temp-ilusta">
+          <span id="description">Descrição</span>
+          <span id="temperature">-ºC</span>
+        </div>
+        
 
-    <!-- cards de previsão -->
+      <!-- cards de previsão -->
 
-    <div class="previsions">
-      <div class="card-prevision">
-        <img src="./assets/3d weather icons webp/04d.webp" alt="" class="ilustration ilustra-1">  
-        <span class="time time-card-1">00:00 am</span>
-        <span class="temperature-card t-card-1">10ºC</span>
-      </div>
+      <div class="previsions">
+        <div class="card-prevision" data-tilt data-tilt-reverse="true" data-tilt-glare data-tilt-max-glare="0.2">
+          <img src="./assets/3d weather icons webp/04d.webp" alt="" class="ilustration ilustra-1">  
+          <span class="time time-card-1">00:00 am</span>
+          <span class="temperature-card t-card-1">10ºC</span>
+        </div>
 
-      <div class="card-prevision">
-        <img src="./assets/3d weather icons webp/02n.webp" alt="" class="ilustration ilustra-2">
-        <span class="time time-card-2">00:00 am</span>
-        <span class="temperature-card t-card-2">10ºC</span>
-      </div>
+        <div class="card-prevision" data-tilt data-tilt-reverse="true" data-tilt-glare data-tilt-max-glare="0.2">
+          <img src="./assets/3d weather icons webp/02n.webp" alt="" class="ilustration ilustra-2">
+          <span class="time time-card-2">00:00 am</span>
+          <span class="temperature-card t-card-2">10ºC</span>
+        </div>
 
-      <div class="card-prevision">
-        <img src="./assets/3d weather icons webp/04n.webp" alt="" class="ilustration ilustra-2">
-        <span class="time time-card-2">00:00 am</span>
-        <span class="temperature-card t-card-3">10ºC</span>
+        <div class="card-prevision" data-tilt data-tilt-reverse="true" data-tilt-glare data-tilt-max-glare="0.2">
+          <img src="./assets/3d weather icons webp/04n.webp" alt="" class="ilustration ilustra-2">
+          <span class="time time-card-2">00:00 am</span>
+          <span class="temperature-card t-card-3">10ºC</span>
+        </div>
       </div>
     </div>
     <nav id="nav-bar">
@@ -81,12 +82,12 @@
         <i class="fa-solid fa-xmark clear-input"></i>
       </div>
       <div id="other-cities">
-        <div class="city-1">
+        <div class="city-1" data-tilt data-tilt-reverse="true" data-tilt-glare data-tilt-max-glare="0.2">
           <span id="title-o-city-1">Brasília</span>
           <img src="./assets/3d weather icons webp/04d.webp" alt="" id="img-o-city-1">
           <div id="informations-o-city-1">32ºC <span id="description-o-city-1">Chuva</span></div>
         </div>
-        <div class="city-2">
+        <div class="city-2" data-tilt data-tilt-reverse="true" data-tilt-glare data-tilt-max-glare="0.2">
           <span id="title-o-city-2">Porto Alegre</span> 
           <img src="./assets/3d weather icons webp/02d.webp" alt="" id="img-o-city-2">
           <div id="informations-o-city-2">28ºC <span id="description-o-city-2">Sol</span></div>
@@ -118,6 +119,7 @@
     </div>
 
     <script src="index.js"></script>
+    <script src="vanilla-tilt.min.js"></script>
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/2da8be6807.js" crossorigin="anonymous"></script>
   </body>
