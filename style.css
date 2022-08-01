@@ -123,6 +123,7 @@ body .bg.bg-light {
   width: 100%;
   margin-top: 10%;
   padding-inline: 32px;
+  margin-bottom: 120px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -397,6 +398,7 @@ body .bg.bg-light {
   }
   .previsions {
     margin-top: 100px;
+    margin-bottom: 0;
   }
 }
 @media (min-width: 600px) {
@@ -434,6 +436,7 @@ body .bg.bg-light {
     gap: 56px;
     margin-top: initial;
     padding: 0;
+    margin-bottom: 0; 
   }
   .previsions .card-prevision {
     background: rgba(238, 238, 238, 0.034);
