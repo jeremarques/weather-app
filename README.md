@@ -1,8 +1,7 @@
 # Weather App
 Weather Query Site for 200+ Cities Using OpenWeatherMap API. Design by uiamjad, https://dribbble.com/shots/15162632-Weather-app
 
-## Project link
-<p><a href='https://jereweather.vercel.app'>jereweather.vercel.app</a></p>
+## <a href='https://jereweather.vercel.app'>View Project</a>
 
 ## Mobile Version
 <div>
